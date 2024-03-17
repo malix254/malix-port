@@ -13,6 +13,48 @@ if (navClose) {
     navMenu.classList.remove("show-menu");
   });
 }
+document.addEventListener("DOMContentLoaded", function() {
+  const title = document.getElementById("typewriter");
+  const text = title.textContent.trim();
+  title.textContent = ""; // Clear the text
+  for (let i = 0; i < text.length; i++) {
+    const letter = document.createElement("span");
+    letter.textContent = text[i];
+    letter.style.animationDelay = `${i * 0.1}s`;
+    title.appendChild(letter);
+  }
+
+  // Function to reset animation
+  function resetAnimation() {
+    title.style.animation = 'none';
+    title.offsetHeight; /* trigger reflow */
+    title.style.animation = null; 
+  }
+
+  // Call the resetAnimation function when the animation ends
+  title.addEventListener('animationiteration', resetAnimation);
+});
+// Text to be typed out
+const text = "Your friendly neighborhood code wizard 🧙‍♂️! I'm all about crafting tech magic ✨ as a software sorcerer. With my spells... uh, I mean, coding skills, I'm on a mission to turn your wildest digital dreams into reality! Let's sprinkle some laughter into the lines of code and make the world a happier place, one bug fix at a time! 🐞💻";
+
+// Get the element where the text will be displayed
+const descriptionElement = document.getElementById("description");
+
+// Function to display text with typing animation
+function typeText(text, element) {
+  let index = 0;
+  const interval = setInterval(() => {
+    if (index <= text.length) {
+      element.textContent = text.slice(0, index);
+      index++;
+    } else {
+      clearInterval(interval);
+    }
+  }, 30); // Adjust typing speed here
+}
+
+// Call the function with the text and element
+typeText(text, descriptionElement);
 
 // remove menu mobile
 const navLink = document.querySelectorAll(".nav-link");

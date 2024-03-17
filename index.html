@@ -86,6 +86,14 @@
               >
                 <i class="fa-brands fa-github"></i>
               </a>
+              <a onclick="toggleMute()" class="home-social-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-volume-up" viewBox="0 0 16 16">
+                  <path d="M11.736 2.596a.5.5 0 0 1 .814.39v10.817a.5.5 0 0 1-.814.39L8.5 12.201V3.8l3.236-1.604zM10.5 4.823v6.354L8.072 11.5a.5.5 0 0 1-.786-.416V5.739a.5.5 0 0 1 .786-.416L10.5 4.823z"/>
+                  <path d="M12 4.5a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-.5.5H9.686l-.647.323a1.5 1.5 0 0 1-.74.197H6.5a.5.5 0 0 1-.5-.5v-5a.5.5 0 0 1 .5-.5h2.799a1.5 1.5 0 0 1 .74.197l.647.323H12z"/>
+                </svg>
+              </a>
+              
+              
             </div>
 
             <div class="home-img">
@@ -121,25 +129,57 @@
             </div>
 
             <div class="home-data">
-              <h1 class="home-title">Hi, I am Griffins Mbae</h1>
+              <h1 class="home-title" id="typewriter">Hi, I am Griffins Mbae</h1>
+
               <h3 class="home-subtitle">Software Sorcerer</h3>
-              <p class="home-description">
-                Your friendly neighborhood code wizard 🧙‍♂️! I'm all about crafting tech magic ✨ as a software sorcerer. With my spells... uh, I mean, coding skills, I'm on a mission to turn your wildest digital dreams into reality! 
-                Let's sprinkle some laughter into the lines of code and make the world a happier place, one bug fix at a time! 🐞💻
-              </p>
-              <a href="#contact" class="button button-flex">
-                Contact Me <i class="fa-regular fa-envelope button-icon"></i>
-              </a>
+             <p class="home-description" id="description">
+             
             </div>
           </div>
+          
+          
           <div class="home-scroll">
             <a href="#about" class="home-scroll-button button-flex">
-              <!-- <i class="fa-solid fa-computer-mouse home-scroll-mouse"></i> -->
-              <img class="home-scroll-mouse" src="Assets/mouse.svg" alt="" />
-              <span class="home-scroll-name">Scroll down</span>
-              <i class="fa-solid fa-angles-down home-scroll-arrow"></i>
+                <!-- <i class="fa-solid fa-computer-mouse home-scroll-mouse"></i> -->
+                <img class="home-scroll-mouse" src="Assets/mouse.svg" alt="" />
+                <span class="home-scroll-name">Scroll down</span>
+                <i class="fa-solid fa-angles-down home-scroll-arrow"></i>
             </a>
-          </div>
+        </div>
+        
+        <audio id="audioPlayer" autoplay>
+          <source src="audio/tipsy_gee_finish_kumalo_ft._spoiler_4t3_x_soundkraft_official_video_mp3_80536.mp3" type="audio/mp3">
+          Your browser does not support the audio element.
+      </audio>
+     
+      
+      
+      
+      <script>
+          var audioPlayer = document.getElementById("audioPlayer");
+          var isMuted = false;
+      
+          function togglePlay() {
+              if (audioPlayer.paused) {
+                  audioPlayer.play();
+              } else {
+                  audioPlayer.pause();
+              }
+          }
+      
+          function toggleMute() {
+              if (isMuted) {
+                  audioPlayer.muted = false;
+                  isMuted = false;
+              } else {
+                  audioPlayer.muted = true;
+                  isMuted = true;
+              }
+          }
+      </script>
+      
+      
+        
         </div>
       </section>
 
@@ -1087,8 +1127,17 @@
               </a>
             </div>
           </div>
+          <br>
+          <div class="button-containers">
+            <button class="button button-flex" onclick="togglePlay()" style="width: 100px;">Next</button>
+            <span class="space"></span>
+            <button class="button button-flex" onclick="togglePlay()" style="width: 100px;">Play</button>
+            <span class="space"></span>
+            <button class="button button-flex" onclick="togglePlay()" style="width: 100px;">Stop</button>
+          </div>
           <p class="footer-copy">By Griffins | Mbae  -Moringa</p>
         </div>
+        
       </footer>
     </main>
 

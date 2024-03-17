@@ -301,6 +301,22 @@ img {
 
 .home-title {
   font-size: var(--big-font-size);
+  overflow: hidden; /* Hide overflow to prevent jumping */
+  white-space: nowrap; /* Prevent line breaks */
+}
+
+/* Keyframes for typewriter effect */
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+/* Keyframes for color changing */
+
+
+/* Apply animations to the text */
+#typewriter {
+  animation: typing 4s steps(30) forwards, colorChange 4s infinite alternate;
 }
 
 .home-subtitle {
@@ -312,6 +328,32 @@ img {
 
 .home-description {
   margin-bottom: var(--margin-bottom-0-2);
+}
+
+.cursor {
+  display: inline-block;
+  width: 1px;
+  height: 1.2em; /* Adjust height as needed */
+  background-color: black;
+  animation: blink 0.7s infinite;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+.button-containers {
+  display: flex;
+  justify-content: space-between;
+}
+
+.space {
+  margin: 0 10px; /* Adjust the space as needed */
+}
+
+.button {
+  /* Add your button styles here */
 }
 
 .home-scroll {
