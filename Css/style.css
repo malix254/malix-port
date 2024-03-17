@@ -352,13 +352,9 @@ img {
   margin: 0 10px; /* Adjust the space as needed */
 }
 
-.button {
-  /* Add your button styles here */
-}
 
-.home-scroll {
-  /* display: none; */
-}
+
+
 
 .home-scroll-button {
   color: var(--first-color);
@@ -885,9 +881,7 @@ img {
   flex-direction: column;
   row-gap: 1.5rem;
 }
-.footer-link {
-  /* hii  */
-}
+
 .footer-link:hover {
   color: var(--first-color-lighter);
 }
