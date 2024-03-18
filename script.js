@@ -24,23 +24,23 @@ document.addEventListener("DOMContentLoaded", function() {
     title.appendChild(letter);
   }
 
-  // Function to reset animation
+ 
   function resetAnimation() {
     title.style.animation = 'none';
     title.offsetHeight; /* trigger reflow */
     title.style.animation = null; 
   }
 
-  // Call the resetAnimation function when the animation ends
+
   title.addEventListener('animationiteration', resetAnimation);
 });
-// Text to be typed out
+
 const text = "Your friendly neighborhood code wizard 🧙‍♂️! I'm all about crafting tech magic ✨ as a software sorcerer. With my spells... uh, I mean, coding skills, I'm on a mission to turn your wildest digital dreams into reality! Let's sprinkle some laughter into the lines of code and make the world a happier place, one bug fix at a time! 🐞💻";
 
-// Get the element where the text will be displayed
+
 const descriptionElement = document.getElementById("description");
 
-// Function to display text with typing animation
+
 function typeText(text, element) {
   let index = 0;
   const interval = setInterval(() => {
@@ -53,7 +53,7 @@ function typeText(text, element) {
   }, 30); // Adjust typing speed here
 }
 
-// Call the function with the text and element
+
 typeText(text, descriptionElement);
 
 // remove menu mobile
@@ -110,7 +110,6 @@ boxCloses.forEach((boxClose) => {
   });
 });
 
-//scroll section active link
 const sections = document.querySelectorAll("section[id]");
 
 function scrollActive() {
@@ -134,7 +133,7 @@ function scrollActive() {
 }
 window.addEventListener("scroll", scrollActive);
 
-// change bg header
+
 function scrollHeader() {
   const nav = document.getElementById("header");
   // When the scroll is greater than 200 viewport height, add the scroll-header class to the header tag
@@ -152,22 +151,22 @@ function scrollUp() {
 }
 window.addEventListener("scroll", scrollUp);
 
-//dark light mode------------------
+
 const themeButton = document.getElementById("theme-button");
 const darkTheme = "dark-theme";
 const iconTheme = "fa-sun";
 
-// Previously selected topic (if user selected)
+
 const selectedTheme = localStorage.getItem("selected-theme");
 const selectedIcon = localStorage.getItem("selected-icon");
 
-// We obtain the current theme that the interface has by validating the dark-theme class
+
 const getCurrentTheme = () =>
   document.body.classList.contains(darkTheme) ? "dark" : "light";
 const getCurrentIcon = () =>
   themeButton.classList.contains(iconTheme) ? "fa-moon" : "fa-sun";
 
-// We validate if the user previously chose a topic
+
 if (selectedTheme) {
   // If the validation is fulfilled, we ask what the issue was to know if we activated or deactivated the dark
   document.body.classList[selectedTheme === "dark" ? "add" : "remove"](
@@ -178,17 +177,17 @@ if (selectedTheme) {
   );
 }
 
-// Activate / deactivate the theme manually with the button
+
 themeButton.addEventListener("click", () => {
-  // Add or remove the dark / icon theme
+ 
   document.body.classList.toggle(darkTheme);
   themeButton.classList.toggle(iconTheme);
-  // We save the theme and the current icon that the user chose
+  
   localStorage.setItem("selected-theme", getCurrentTheme());
   localStorage.setItem("selected-icon", getCurrentIcon());
 });
 
-//swiper
+
 let swiperPortfolio = new Swiper(".portfolio-container", {
   cssMode: true,
   loop: true,
